@@ -5,42 +5,42 @@ using UnityEngine.InputSystem;
 using TMPro;
 
 
-public class PickupDetector : MonoBehaviour
+/*public class winPickupDetector : MonoBehaviour
 {
 
-   
+
     public TextMeshProUGUI countText;
-    public GameObject loseTextObject; 
-    private int count; 
-   
+    public GameObject winTextObject;
+    private int count;
+
 
     // Start is called before the first frame update
     void Start()
     {
-       
+
         count = 0;
         SetCountText();
-        loseTextObject.SetActive(false);
+        winTextObject.SetActive(false);
     }
-    
+
     void SetCountText()
     {
         countText.text = "Count: " + count.ToString();
-        if (count >= 4)
+        if (count >= 1)
         {
-            loseTextObject.SetActive(true);
+            winTextObject.SetActive(true);
         }
     }
 
-    
+
     private void OnTriggerEnter(Collider other)
     {
 
-        if (other.gameObject.CompareTag("PickUp"))
+        if (other.gameObject.CompareTag("Finish"))
         {
             other.gameObject.SetActive(false);
             //count = count + 1;
-             count ++; 
+            count++;
 
 
             SetCountText();
@@ -51,4 +51,4 @@ public class PickupDetector : MonoBehaviour
     }
 
 
-}
+} */
