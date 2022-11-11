@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class FlipperScript : MonoBehaviour
 {
+    
     public float restPosition = 0f;
     public float pressedPosition = 180f;
     public float hitStrength = 10000f;
@@ -25,18 +26,29 @@ public class FlipperScript : MonoBehaviour
         spring.spring = hitStrength;
         spring.damper = flipperDamper;
 
-        if (Input.GetAxis(inputName) == 1)
+        if (Input.GetAxis(inputName) == 1) 
         {
             spring.targetPosition = pressedPosition;
-
         }
-        else
+            else
         {
             spring.targetPosition = restPosition;
+        }
+            hinge.spring = spring;
+            hinge.useLimits = true;
+
+        void OnTriggerEnter(Collider other) 
+        {
+            if (other.gameObject.tag == "Player")
+            {
+                spring.targetPosition = pressedPosition;
+            }
+                else {
+                spring.targetPosition = restPosition;
+            }
 
         }
-        hinge.spring = spring;
-        hinge.useLimits = true; 
 
     }
 }
+
