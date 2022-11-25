@@ -26,7 +26,7 @@ public class PickupDetector : MonoBehaviour
     void SetCountText()
     {
         countText.text = "Count: " + count.ToString();
-        if (count >= 4)
+        if (count >= 1)
         {
             loseTextObject.SetActive(true);
         }
@@ -43,8 +43,14 @@ public class PickupDetector : MonoBehaviour
              count ++; 
 
 
-            SetCountText();
         }
+        void Update()
+        {
+             SetCountText();
+        }
+
+
+
 
 
 
